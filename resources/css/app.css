@@ -4,5 +4,78 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+
+    --color-teal:       #00B5A4;
+    --color-teal-dark:  #008B7A;
+    --color-teal-muted: #CCF0EC;
+    --color-teal-light: #F0FAFA;
+
+    --color-navy:       #1A3A6B;
+    --color-navy-dark:  #0F2244;
+    --color-navy-light: #EBF0F8;
+
+    --color-gray-50:  #F8FAFC;
+    --color-gray-100: #F1F5F9;
+    --color-gray-600: #475569;
+    --color-gray-800: #1E293B;
 }
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer utilities {
+    .font-display {
+        font-family: var(--font-display);
+    }
+
+    .animate-fade-up {
+        animation: fadeUp 0.7s ease both;
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease both;
+    }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes pulse-ring {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 181, 164, 0.4); }
+    50%       { box-shadow: 0 0 0 12px rgba(0, 181, 164, 0); }
+}
+
+.pulse-ring {
+    animation: pulse-ring 2s ease-in-out infinite;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+.reveal-delay-7 { transition-delay: 0.7s; }
