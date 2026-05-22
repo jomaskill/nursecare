@@ -123,7 +123,7 @@
                         <div class="relative">
                             <div class="absolute inset-0 rounded-3xl blur-2xl opacity-30" style="background: var(--color-teal)"></div>
                             <div class="relative rounded-3xl p-5 sm:p-6 lg:p-8 shadow-2xl" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(20px)">
-                                <img src="/logo.jpg" alt="NurseCare" class="w-36 sm:w-48 lg:w-64 object-contain" />
+                                <img src="/logo.jpg" alt="NurseCare" class="w-64 sm:w-48 lg:w-64 object-contain" />
                             </div>
                         </div>
                     </div>
