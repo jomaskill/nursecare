@@ -27,7 +27,7 @@
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between sm:h-20">
                 <a href="#" class="flex items-center gap-2">
-                    <img src="/logo.jpg" alt="NurseCare" class="h-10 w-auto sm:h-12 object-contain" />
+                    <img src="/logo-no-bg.png" alt="NurseCare" class="h-10 w-auto sm:h-12 object-contain" />
                 </a>
                 <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener"
                    class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:scale-105 active:scale-95 sm:px-5 sm:py-2.5"
@@ -63,7 +63,7 @@
                  style="background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 32px 32px;"></div>
 
             <div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 sm:py-32">
-                <div class="flex flex-col items-center gap-10 text-center lg:flex-row lg:text-left lg:gap-16">
+                <div class="flex flex-col items-center gap-6 text-center lg:flex-row lg:text-left lg:gap-16">
 
                     {{-- Text content --}}
                     <div class="flex-1">
@@ -119,11 +119,11 @@
                     </div>
 
                     {{-- Logo card --}}
-                    <div class="hidden lg:flex flex-col items-center animate-fade-in" style="animation-delay: 0.3s">
+                    <div class="flex flex-col items-center animate-fade-in order-first lg:order-last" style="animation-delay: 0.3s">
                         <div class="relative">
                             <div class="absolute inset-0 rounded-3xl blur-2xl opacity-30" style="background: var(--color-teal)"></div>
-                            <div class="relative rounded-3xl p-8 shadow-2xl" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(20px)">
-                                <img src="/logo.jpg" alt="NurseCare" class="w-64 object-contain rounded-2xl" />
+                            <div class="relative rounded-3xl p-5 sm:p-6 lg:p-8 shadow-2xl" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(20px)">
+                                <img src="/logo.jpg" alt="NurseCare" class="w-36 sm:w-48 lg:w-64 object-contain" />
                             </div>
                         </div>
                     </div>
@@ -140,15 +140,71 @@
         </section>
 
         {{-- ═══════════════════════════════════════════════════════════ --}}
+        {{-- APRESENTAÇÃO                                                  --}}
+        {{-- ═══════════════════════════════════════════════════════════ --}}
+        <section class="py-16 sm:py-24 overflow-hidden">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
+
+                    {{-- Photo --}}
+                    <div class="reveal shrink-0">
+                        <div class="relative">
+                            <div class="absolute -inset-4 rounded-[2.5rem] opacity-15 blur-2xl" style="background: var(--color-teal)"></div>
+                            <div class="absolute -bottom-3 -right-3 h-full w-full rounded-3xl" style="background: var(--color-teal-light); border: 2px solid var(--color-teal-muted)"></div>
+                            <img src="/hero.png" alt="Enfermeira NurseCare"
+                                 class="relative w-72 sm:w-80 lg:w-96 rounded-3xl shadow-xl object-cover"
+                                 style="border: 3px solid var(--color-teal-muted)" />
+                        </div>
+                    </div>
+
+                    {{-- Text --}}
+                    <div class="reveal reveal-delay-2 flex-1 text-center lg:text-left">
+                        <p class="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest mb-4 lg:justify-start justify-center"
+                           style="color: var(--color-teal); font-family: var(--font-display)">
+                            ★ Cuidado que vai até você
+                        </p>
+                        <h2 class="text-3xl font-bold sm:text-4xl" style="font-family: var(--font-display); color: var(--color-navy)">
+                            Enfermagem Profissional<br/>no Conforto do Seu Lar
+                        </h2>
+                        <p class="mt-5 text-base sm:text-lg leading-relaxed" style="color: var(--color-gray-600)">
+                            Nossa equipe de enfermeiras qualificadas realiza procedimentos com toda segurança, técnica e acolhimento — sem que você precise sair de casa.
+                        </p>
+                        <ul class="mt-6 space-y-3">
+                            @foreach(['Procedimentos realizados por profissionais registrados no COREN', 'Atendimento agendado pelo WhatsApp de forma rápida e simples', 'Cuidado humanizado e individualizado para cada paciente'] as $item)
+                            <li class="flex items-start gap-3 text-sm lg:justify-start justify-center" style="color: var(--color-gray-600)">
+                                <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style="background: var(--color-teal-light)">
+                                    <svg class="h-3 w-3" style="color: var(--color-teal-dark)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </span>
+                                {{ $item }}
+                            </li>
+                            @endforeach
+                        </ul>
+                        <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener"
+                           class="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-md transition-all duration-200 hover:scale-105 active:scale-95"
+                           style="background: linear-gradient(135deg, var(--color-teal), var(--color-teal-dark)); font-family: var(--font-display)">
+                            <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            Agendar pelo WhatsApp
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        {{-- ═══════════════════════════════════════════════════════════ --}}
         {{-- SOBRE                                                        --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
         <section class="py-16 sm:py-24">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-3xl text-center reveal">
-                    <span class="inline-block rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-widest mb-4"
-                          style="background: var(--color-teal-light); color: var(--color-teal-dark); font-family: var(--font-display)">
-                        Quem somos
-                    </span>
+                    <p class="flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-widest mb-4"
+                       style="color: var(--color-teal); font-family: var(--font-display)">
+                        ★ Quem somos
+                    </p>
                     <h2 class="text-3xl font-bold sm:text-4xl" style="font-family: var(--font-display); color: var(--color-navy)">
                         Enfermagem com Propósito
                     </h2>
@@ -163,11 +219,11 @@
                         ['Seguro', 'Seguimos rigorosos protocolos de biossegurança e ética profissional.', '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>'],
                         ['Domiciliar', 'Atendimento completo no conforto e privacidade da sua própria casa.', '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>'],
                     ] as $i => $item)
-                    <div class="reveal reveal-delay-{{ $i + 1 }} rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                         style="background: var(--color-teal-light); border: 1px solid var(--color-teal-muted)">
-                        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl"
-                             style="background: var(--color-teal)">
-                            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <div class="reveal reveal-delay-{{ $i + 1 }} rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-sm"
+                         style="background: #F8FAFC; border: 1px solid var(--color-gray-100)">
+                        <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl"
+                             style="background: var(--color-gray-100)">
+                            <svg class="h-6 w-6" style="color: var(--color-teal)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                                 {!! $item[2] !!}
                             </svg>
                         </div>
@@ -185,10 +241,10 @@
         <section id="servicos" class="py-16 sm:py-24" style="background: var(--color-gray-50)">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="text-center reveal">
-                    <span class="inline-block rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-widest mb-4"
-                          style="background: var(--color-navy-light); color: var(--color-navy); font-family: var(--font-display)">
-                        O que fazemos
-                    </span>
+                    <p class="flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-widest mb-4"
+                       style="color: var(--color-teal); font-family: var(--font-display)">
+                        ★ O que fazemos
+                    </p>
                     <h2 class="text-3xl font-bold sm:text-4xl" style="font-family: var(--font-display); color: var(--color-navy)">
                         Nossos Serviços
                     </h2>
@@ -197,102 +253,31 @@
                     </p>
                 </div>
 
-                <div class="mt-12 grid gap-6 lg:grid-cols-2">
+                <div class="reveal mt-12 relative">
+                    {{-- Scroll arrows (mobile only) --}}
+                    <button id="proc-left"
+                            class="sm:hidden absolute left-1 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-200"
+                            style="background: var(--color-teal)"
+                            onclick="scrollProc(-1)" aria-label="Anterior">
+                        <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="proc-right"
+                            class="sm:hidden absolute right-1 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 items-center justify-center rounded-full shadow-lg transition-opacity duration-200"
+                            style="background: var(--color-teal)"
+                            onclick="scrollProc(1)" aria-label="Próximo">
+                        <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
 
-                    {{-- Serviço 1: Administração de Medicamentos --}}
-                    <div class="reveal reveal-delay-1 rounded-3xl overflow-hidden shadow-sm border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                         style="border-color: var(--color-teal-muted); background: white">
-                        <div class="p-1.5" style="background: linear-gradient(135deg, var(--color-teal), var(--color-teal-dark))">
-                            <div class="flex items-center gap-3 px-5 py-3">
-                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/20">
-                                    <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-base font-bold text-white" style="font-family: var(--font-display)">
-                                    Administração de Medicamentos
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div class="p-6 sm:p-8">
-                            <div class="grid gap-6 sm:grid-cols-2">
-                                <div>
-                                    <p class="text-xs font-bold uppercase tracking-wider mb-3" style="color: var(--color-teal-dark); font-family: var(--font-display)">
-                                        Vias Administradas
-                                    </p>
-                                    <ul class="space-y-2">
-                                        @foreach(['Intramuscular (IM)', 'Intravenosa (EV)', 'Subcutânea (SC)', 'Oral'] as $via)
-                                        <li class="flex items-center gap-2 text-sm" style="color: var(--color-gray-800)">
-                                            <span class="h-1.5 w-1.5 shrink-0 rounded-full" style="background: var(--color-teal)"></span>
-                                            {{ $via }}
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-
-                                <div>
-                                    <p class="text-xs font-bold uppercase tracking-wider mb-3" style="color: var(--color-teal-dark); font-family: var(--font-display)">
-                                        Exemplos
-                                    </p>
-                                    <div class="flex flex-wrap gap-2">
-                                        @foreach(['Antibióticos', 'Anticoncepcionais', 'Insulinas', 'Analgésicos', 'Vitaminas', 'Prescrições'] as $med)
-                                        <span class="rounded-full px-3 py-1 text-xs font-medium"
-                                              style="background: var(--color-teal-light); color: var(--color-teal-dark); border: 1px solid var(--color-teal-muted)">
-                                            {{ $med }}
-                                        </span>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
+                    <div id="proc-scroll" class="overflow-x-auto rounded-2xl -mx-2 sm:mx-0" style="scrollbar-width: none">
+                        <div class="min-w-[720px] sm:min-w-0">
+                            <img src="/procedures.png" alt="Procedimentos NurseCare"
+                                 class="w-full h-auto block rounded-2xl shadow-md" />
                         </div>
                     </div>
-
-                    {{-- Serviço 2: Monitoramento de Sinais Vitais --}}
-                    <div class="reveal reveal-delay-2 rounded-3xl overflow-hidden shadow-sm border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                         style="border-color: rgba(26,58,107,0.15); background: white">
-                        <div class="p-1.5" style="background: linear-gradient(135deg, var(--color-navy), var(--color-navy-dark))">
-                            <div class="flex items-center gap-3 px-5 py-3">
-                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/20">
-                                    <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-base font-bold text-white" style="font-family: var(--font-display)">
-                                    Monitoramento de Sinais Vitais
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div class="p-6 sm:p-8">
-                            <p class="text-sm mb-5" style="color: var(--color-gray-600)">
-                                Acompanhamento dos dados para controle e prevenção.
-                            </p>
-                            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                                @foreach([
-                                    ['Pressão Arterial', '<path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>'],
-                                    ['Freq. Cardíaca', '<path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>'],
-                                    ['Saturação', '<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>'],
-                                    ['Temperatura', '<path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l-2 2M9 19l2 2m-2-2h4m-4-13h4m0 0l2-2m-2 2V19m0-13a2 2 0 110 4 2 2 0 010-4z"/>'],
-                                    ['Glicemia Cap.', '<path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>'],
-                                ] as $sinal)
-                                <div class="flex flex-col items-center gap-2 rounded-2xl p-4 text-center"
-                                     style="background: var(--color-navy-light)">
-                                    <div class="flex h-9 w-9 items-center justify-center rounded-xl"
-                                         style="background: var(--color-navy)">
-                                        <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                            {!! $sinal[1] !!}
-                                        </svg>
-                                    </div>
-                                    <span class="text-xs font-semibold leading-tight" style="color: var(--color-navy); font-family: var(--font-display)">
-                                        {{ $sinal[0] }}
-                                    </span>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -303,10 +288,10 @@
         <section class="py-16 sm:py-24" style="background: white">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="text-center reveal">
-                    <span class="inline-block rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-widest mb-4"
-                          style="background: var(--color-teal-light); color: var(--color-teal-dark); font-family: var(--font-display)">
-                        Por que nos escolher
-                    </span>
+                    <p class="flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-widest mb-4"
+                       style="color: var(--color-teal); font-family: var(--font-display)">
+                        ★ Por que nos escolher
+                    </p>
                     <h2 class="text-3xl font-bold sm:text-4xl" style="font-family: var(--font-display); color: var(--color-navy)">
                         O Que Oferecemos
                     </h2>
@@ -326,10 +311,10 @@
                     @endphp
 
                     @foreach($diferenciais as $i => $d)
-                    <div class="reveal reveal-delay-{{ min($i + 1, 7) }} group flex flex-col gap-3 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                         style="background: var(--color-gray-50); border: 1px solid var(--color-gray-100)">
-                        <div class="flex h-10 w-10 items-center justify-center rounded-xl transition-colors duration-200"
-                             style="background: var(--color-teal-light); color: var(--color-teal)">
+                    <div class="reveal reveal-delay-{{ min($i + 1, 7) }} group flex flex-col gap-3 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-sm"
+                         style="background: #F8FAFC; border: 1px solid #E8EFF5">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-xl"
+                             style="background: var(--color-gray-100); color: var(--color-teal)">
                             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                                 {!! $d[2] !!}
                             </svg>
@@ -347,45 +332,54 @@
         {{-- ═══════════════════════════════════════════════════════════ --}}
         {{-- COMO FUNCIONA                                                --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
-        <section class="py-16 sm:py-24" style="background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 100%)">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div class="text-center reveal">
-                    <span class="inline-block rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-widest mb-4"
-                          style="background: rgba(0,181,164,0.15); color: var(--color-teal-muted); font-family: var(--font-display)">
-                        Simples assim
-                    </span>
-                    <h2 class="text-3xl font-bold text-white sm:text-4xl" style="font-family: var(--font-display)">
+        <section class="py-16 sm:py-24" style="background: white">
+            <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal mb-10">
+                    <p class="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest mb-4"
+                       style="color: var(--color-teal); font-family: var(--font-display)">
+                        ★ Simples assim
+                    </p>
+                    <h2 class="text-3xl font-bold sm:text-4xl" style="font-family: var(--font-display); color: var(--color-navy)">
                         Como Funciona
                     </h2>
-                    <p class="mt-3 text-sm" style="color: rgba(255,255,255,0.6)">
-                        Processo rápido, fácil e pensado para o seu conforto.
-                    </p>
                 </div>
 
-                <div class="mt-14 relative">
-                    {{-- Connector line (desktop) --}}
-                    <div class="absolute top-10 left-16 right-16 h-px hidden lg:block"
-                         style="background: linear-gradient(to right, var(--color-teal), rgba(0,181,164,0.2))"></div>
+                @php
+                $steps = [
+                    ['Entre em Contato', 'Mande uma mensagem pelo WhatsApp. Estamos disponíveis para tirar dúvidas e agendar o seu atendimento de forma rápida e sem complicação.'],
+                    ['Envie a Prescrição', 'Encaminhe a prescrição médica ou descreva a sua necessidade. Avaliaremos e confirmaremos o procedimento mais indicado para você.'],
+                    ['Agendamos', 'Confirmamos data e horário no momento mais conveniente para você, no conforto da sua casa ou local preferido.'],
+                    ['Atendimento', 'Nossa enfermeira realiza o procedimento com segurança, técnica e todo o cuidado que você merece.'],
+                ];
+                @endphp
 
-                    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                        @foreach([
-                            ['Entre em Contato', 'Mande uma mensagem pelo WhatsApp a qualquer momento.'],
-                            ['Envie a Prescrição', 'Encaminhe a prescrição médica ou descreva sua necessidade.'],
-                            ['Agendamos', 'Confirmamos o horário mais conveniente para você.'],
-                            ['Atendimento', 'Realizamos o procedimento com segurança no seu domicílio.'],
-                        ] as $i => $step)
-                        <div class="reveal reveal-delay-{{ $i + 1 }} flex flex-col items-center text-center">
-                            <div class="relative mb-5 flex h-20 w-20 items-center justify-center rounded-2xl shadow-lg"
-                                 style="background: linear-gradient(135deg, var(--color-teal), var(--color-teal-dark))">
-                                <span class="text-2xl font-extrabold text-white" style="font-family: var(--font-display)">{{ $i + 1 }}</span>
-                                <div class="absolute -top-2 -right-2 h-5 w-5 rounded-full border-2 border-white"
-                                     style="background: var(--color-teal)"></div>
-                            </div>
-                            <h3 class="text-base font-bold text-white mb-2" style="font-family: var(--font-display)">{{ $step[0] }}</h3>
-                            <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.65)">{{ $step[1] }}</p>
+                <div id="steps-accordion" class="reveal reveal-delay-1 border-t" style="border-color: var(--color-gray-100)">
+                    @foreach($steps as $i => $step)
+                    <div class="step-item border-b" style="border-color: var(--color-gray-100)">
+                        <button
+                            class="step-btn flex w-full items-center gap-5 py-5 sm:py-6 text-left"
+                            onclick="toggleStep(this)">
+                            <span class="text-sm font-bold tabular-nums shrink-0"
+                                  style="color: var(--color-gray-100); font-family: var(--font-display); min-width: 2rem">
+                                0{{ $i + 1 }}
+                            </span>
+                            <span class="step-title flex-1 text-base font-bold transition-colors duration-200"
+                                  style="font-family: var(--font-display); color: var(--color-navy)">
+                                {{ $step[0] }}
+                            </span>
+                            <svg class="step-arrow h-5 w-5 shrink-0 transition-transform duration-300"
+                                 style="color: var(--color-teal)"
+                                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="step-body overflow-hidden transition-all duration-300" style="max-height: 0">
+                            <p class="pb-5 text-sm leading-relaxed" style="color: var(--color-gray-600); padding-left: 3.25rem">
+                                {{ $step[1] }}
+                            </p>
                         </div>
-                        @endforeach
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -479,6 +473,53 @@
                 ? '0 2px 20px rgba(26,58,107,0.12)'
                 : 'none';
         }, { passive: true });
+
+        function toggleStep(btn) {
+            const item = btn.closest('.step-item');
+            const body = item.querySelector('.step-body');
+            const arrow = btn.querySelector('.step-arrow');
+            const title = btn.querySelector('.step-title');
+            const isOpen = body.style.maxHeight && body.style.maxHeight !== '0px';
+
+            document.querySelectorAll('.step-body').forEach(b => b.style.maxHeight = '0px');
+            document.querySelectorAll('.step-arrow').forEach(a => a.style.transform = '');
+            document.querySelectorAll('.step-title').forEach(t => t.style.color = 'var(--color-navy)');
+
+            if (!isOpen) {
+                body.style.maxHeight = body.scrollHeight + 'px';
+                arrow.style.transform = 'rotate(180deg)';
+                title.style.color = 'var(--color-teal)';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const first = document.querySelector('.step-btn');
+            if (first) toggleStep(first);
+
+            const scroll = document.getElementById('proc-scroll');
+            const btnLeft = document.getElementById('proc-left');
+            const btnRight = document.getElementById('proc-right');
+
+            function updateProcArrows() {
+                if (!scroll || !btnLeft || !btnRight) return;
+                const atStart = scroll.scrollLeft <= 2;
+                const atEnd = scroll.scrollLeft + scroll.clientWidth >= scroll.scrollWidth - 2;
+                btnLeft.style.opacity = atStart ? '0' : '1';
+                btnLeft.style.pointerEvents = atStart ? 'none' : 'auto';
+                btnRight.style.opacity = atEnd ? '0' : '1';
+                btnRight.style.pointerEvents = atEnd ? 'none' : 'auto';
+            }
+
+            if (scroll) {
+                scroll.addEventListener('scroll', updateProcArrows, { passive: true });
+                updateProcArrows();
+            }
+        });
+
+        function scrollProc(dir) {
+            const scroll = document.getElementById('proc-scroll');
+            if (scroll) scroll.scrollBy({ left: dir * 220, behavior: 'smooth' });
+        }
     </script>
 
 </body>
