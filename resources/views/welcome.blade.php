@@ -23,7 +23,7 @@
     {{-- ═══════════════════════════════════════════════════════════ --}}
     {{-- NAVBAR                                                       --}}
     {{-- ═══════════════════════════════════════════════════════════ --}}
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);">
+    <header id="navbar" class="hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between sm:h-20">
                 <a href="#" class="flex items-center gap-2">
@@ -48,40 +48,43 @@
         {{-- ═══════════════════════════════════════════════════════════ --}}
         {{-- HERO                                                         --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
-        <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
-            {{-- Background gradient --}}
-            <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 50%, #1a4f7a 100%)"></div>
+        <section class="hero-section relative min-h-screen flex items-center overflow-hidden lg:pt-20">
+            {{-- Mobile background: white --}}
+            <div class="absolute inset-0 bg-white lg:hidden"></div>
 
-            {{-- Decorative circles --}}
-            <div class="absolute top-0 right-0 h-96 w-96 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"
+            {{-- Desktop background: navy gradient --}}
+            <div class="absolute inset-0 hidden lg:block" style="background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 50%, #1a4f7a 100%)"></div>
+
+            {{-- Decorative circles (desktop only) --}}
+            <div class="hidden lg:block absolute top-0 right-0 h-96 w-96 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"
                  style="background: radial-gradient(circle, var(--color-teal), transparent)"></div>
-            <div class="absolute bottom-0 left-0 h-64 w-64 rounded-full opacity-10 translate-y-1/2 -translate-x-1/2"
+            <div class="hidden lg:block absolute bottom-0 left-0 h-64 w-64 rounded-full opacity-10 translate-y-1/2 -translate-x-1/2"
                  style="background: radial-gradient(circle, var(--color-teal), transparent)"></div>
 
-            {{-- Subtle grid pattern --}}
-            <div class="absolute inset-0 opacity-5"
+            {{-- Subtle grid pattern (desktop only) --}}
+            <div class="hidden lg:block absolute inset-0 opacity-5"
                  style="background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 32px 32px;"></div>
 
-            <div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 sm:py-32">
-                <div class="flex flex-col items-center gap-6 text-center lg:flex-row lg:text-left lg:gap-16">
+            <div class="relative mx-auto max-w-6xl px-4 pt-2 pb-10 sm:px-6 lg:px-8 sm:py-32">
+                <div class="flex flex-col items-center gap-2 text-center lg:flex-row lg:text-left lg:gap-16">
 
                     {{-- Text content --}}
                     <div class="flex-1">
                         <div class="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-widest mb-6 animate-fade-in"
-                             style="border-color: rgba(0,181,164,0.4); color: var(--color-teal-muted); background: rgba(0,181,164,0.08); font-family: var(--font-display)">
+                             style="border-color: rgba(0,181,164,0.4); color: var(--color-teal); background: rgba(0,181,164,0.08); font-family: var(--font-display)">
                             <span class="h-1.5 w-1.5 rounded-full animate-pulse" style="background: var(--color-teal)"></span>
                             Intervenções de Enfermagem
                         </div>
 
-                        <h1 class="animate-fade-up text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl"
-                            style="font-family: var(--font-display); animation-delay: 0.1s">
+                        <h1 class="animate-fade-up text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl"
+                            style="font-family: var(--font-display); animation-delay: 0.1s; color: var(--color-navy)">
                             Cuidado Profissional<br/>
                             <span style="color: var(--color-teal)">no Conforto</span><br/>
                             da Sua Casa
                         </h1>
 
-                        <p class="mt-6 text-base leading-relaxed sm:text-lg animate-fade-up"
-                           style="color: rgba(255,255,255,0.75); animation-delay: 0.25s; max-width: 520px">
+                        <p class="hero-desc mt-6 text-base leading-relaxed sm:text-lg animate-fade-up"
+                           style="animation-delay: 0.25s; max-width: 520px; color: var(--color-gray-600)">
                             A Nurse Care Intervenções proporciona assistência de enfermagem humanizada, levando conforto e atendimento profissional diretamente à sua residência.
                         </p>
 
@@ -97,7 +100,7 @@
                             </a>
 
                             <a href="#servicos" class="inline-flex items-center gap-2 text-sm font-semibold transition-all hover:gap-3"
-                               style="color: rgba(255,255,255,0.7); font-family: var(--font-display)">
+                               style="color: var(--color-teal); font-family: var(--font-display)">
                                 Ver serviços
                                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
@@ -108,7 +111,7 @@
                         {{-- Trust badges --}}
                         <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-6 animate-fade-up" style="animation-delay: 0.55s">
                             @foreach(['Atendimento Humanizado', 'Profissionais Qualificados', 'Domiciliar'] as $badge)
-                            <div class="flex items-center gap-2 text-xs font-medium" style="color: rgba(255,255,255,0.6); font-family: var(--font-display)">
+                            <div class="hero-badge flex items-center gap-2 text-xs font-medium" style="color: var(--color-gray-600); font-family: var(--font-display)">
                                 <svg class="h-4 w-4 shrink-0" style="color: var(--color-teal)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
@@ -118,12 +121,17 @@
                         </div>
                     </div>
 
-                    {{-- Logo card --}}
-                    <div class="flex flex-col items-center animate-fade-in order-first lg:order-last" style="animation-delay: 0.3s">
+                    {{-- Mobile: bare logo, full width --}}
+                    <div class="order-first lg:hidden w-full animate-fade-in" style="animation-delay: 0.3s">
+                        <img src="/logo.jpg" alt="NurseCare" class="w-full object-contain" />
+                    </div>
+
+                    {{-- Desktop: logo in glassmorphism card --}}
+                    <div class="hidden lg:flex flex-col items-center animate-fade-in order-last shrink-0" style="animation-delay: 0.3s">
                         <div class="relative">
                             <div class="absolute inset-0 rounded-3xl blur-2xl opacity-30" style="background: var(--color-teal)"></div>
-                            <div class="relative rounded-3xl p-5 sm:p-6 lg:p-8 shadow-2xl" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(20px)">
-                                <img src="/logo.jpg" alt="NurseCare" class="w-64 sm:w-48 lg:w-64 object-contain" />
+                            <div class="relative rounded-3xl p-8 shadow-2xl" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(20px)">
+                                <img src="/logo.jpg" alt="NurseCare" class="w-64 object-contain rounded-2xl" />
                             </div>
                         </div>
                     </div>
@@ -131,8 +139,8 @@
                 </div>
             </div>
 
-            {{-- Wave bottom --}}
-            <div class="absolute bottom-0 left-0 right-0">
+            {{-- Wave bottom (desktop only) --}}
+            <div class="hidden lg:block absolute bottom-0 left-0 right-0">
                 <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path d="M0 60L1440 60L1440 20C1200 60 960 0 720 20C480 40 240 0 0 20L0 60Z" fill="white"/>
                 </svg>
@@ -142,7 +150,7 @@
         {{-- ═══════════════════════════════════════════════════════════ --}}
         {{-- APRESENTAÇÃO                                                  --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
-        <section class="py-16 sm:py-24 overflow-hidden">
+        <section class="py-10 sm:py-24 overflow-hidden">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
 
@@ -198,7 +206,7 @@
         {{-- ═══════════════════════════════════════════════════════════ --}}
         {{-- SOBRE                                                        --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
-        <section class="py-16 sm:py-24">
+        <section class="py-10 sm:py-24">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-3xl text-center reveal">
                     <p class="flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-widest mb-4"
@@ -238,7 +246,7 @@
         {{-- ═══════════════════════════════════════════════════════════ --}}
         {{-- SERVIÇOS                                                     --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
-        <section id="servicos" class="py-16 sm:py-24" style="background: var(--color-gray-50)">
+        <section id="servicos" class="py-10 sm:py-24" style="background: var(--color-gray-50)">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="text-center reveal">
                     <p class="flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-widest mb-4"
@@ -285,7 +293,7 @@
         {{-- ═══════════════════════════════════════════════════════════ --}}
         {{-- DIFERENCIAIS                                                  --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
-        <section class="py-16 sm:py-24" style="background: white">
+        <section class="py-10 sm:py-24" style="background: white">
             <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div class="text-center reveal">
                     <p class="flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-widest mb-4"
@@ -332,7 +340,7 @@
         {{-- ═══════════════════════════════════════════════════════════ --}}
         {{-- COMO FUNCIONA                                                --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
-        <section class="py-16 sm:py-24" style="background: white">
+        <section class="py-10 sm:py-24" style="background: white">
             <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
                 <div class="reveal mb-10">
                     <p class="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest mb-4"
@@ -387,7 +395,7 @@
         {{-- ═══════════════════════════════════════════════════════════ --}}
         {{-- CTA FINAL                                                    --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
-        <section class="py-16 sm:py-24" style="background: white">
+        <section class="py-10 sm:py-24" style="background: white">
             <div class="mx-auto max-w-2xl px-4 text-center sm:px-6">
                 <div class="reveal rounded-3xl p-10 sm:p-14"
                      style="background: linear-gradient(135deg, var(--color-teal-light), var(--color-navy-light)); border: 1px solid var(--color-teal-muted)">
@@ -449,7 +457,7 @@
     {{-- ═══════════════════════════════════════════════════════════ --}}
     <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener"
        id="floating-wa"
-       class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 sm:h-16 sm:w-16"
+       class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 sm:h-16 sm:w-16 opacity-0 pointer-events-none"
        style="background: #25D366"
        aria-label="Falar no WhatsApp">
         <svg class="h-7 w-7 text-white sm:h-8 sm:w-8" fill="currentColor" viewBox="0 0 24 24">
@@ -473,6 +481,17 @@
                 ? '0 2px 20px rgba(26,58,107,0.12)'
                 : 'none';
         }, { passive: true });
+
+        const floatingWa = document.getElementById('floating-wa');
+        const heroCta = document.querySelector('.pulse-ring');
+        if (floatingWa && heroCta) {
+            const ctaObserver = new IntersectionObserver((entries) => {
+                const visible = entries[0].isIntersecting;
+                floatingWa.style.opacity = visible ? '0' : '1';
+                floatingWa.style.pointerEvents = visible ? 'none' : 'auto';
+            }, { threshold: 0.5 });
+            ctaObserver.observe(heroCta);
+        }
 
         function toggleStep(btn) {
             const item = btn.closest('.step-item');
