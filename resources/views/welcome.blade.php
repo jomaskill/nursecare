@@ -51,7 +51,7 @@
         <section class="hero-section relative min-h-screen flex items-center overflow-hidden lg:pt-20">
             <div class="absolute inset-0 bg-white"></div>
 
-            <div class="relative mx-auto max-w-6xl px-4 pt-2 pb-10 sm:px-6 lg:px-8 sm:py-32">
+            <div class="relative mx-auto max-w-6xl px-4 pt-2 pb-10 sm:px-6 lg:px-8">
                 <div class="flex flex-col items-center gap-2 text-center">
 
                     {{-- Text content --}}
