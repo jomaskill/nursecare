@@ -49,32 +49,18 @@
         {{-- HERO                                                         --}}
         {{-- ═══════════════════════════════════════════════════════════ --}}
         <section class="hero-section relative min-h-screen flex items-center overflow-hidden lg:pt-20">
-            {{-- Mobile background: white --}}
-            <div class="absolute inset-0 bg-white lg:hidden"></div>
-
-            {{-- Desktop background: navy gradient --}}
-            <div class="absolute inset-0 hidden lg:block" style="background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 50%, #1a4f7a 100%)"></div>
-
-            {{-- Decorative circles (desktop only) --}}
-            <div class="hidden lg:block absolute top-0 right-0 h-96 w-96 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"
-                 style="background: radial-gradient(circle, var(--color-teal), transparent)"></div>
-            <div class="hidden lg:block absolute bottom-0 left-0 h-64 w-64 rounded-full opacity-10 translate-y-1/2 -translate-x-1/2"
-                 style="background: radial-gradient(circle, var(--color-teal), transparent)"></div>
-
-            {{-- Subtle grid pattern (desktop only) --}}
-            <div class="hidden lg:block absolute inset-0 opacity-5"
-                 style="background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 32px 32px;"></div>
+            <div class="absolute inset-0 bg-white"></div>
 
             <div class="relative mx-auto max-w-6xl px-4 pt-2 pb-10 sm:px-6 lg:px-8 sm:py-32">
-                <div class="flex flex-col items-center gap-2 text-center lg:flex-row lg:text-left lg:gap-16">
+                <div class="flex flex-col items-center gap-2 text-center">
 
                     {{-- Text content --}}
-                    <div class="flex-1">
-                        <div class="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-widest mb-6 animate-fade-in"
-                             style="border-color: rgba(0,181,164,0.4); color: var(--color-teal); background: rgba(0,181,164,0.08); font-family: var(--font-display)">
-                            <span class="h-1.5 w-1.5 rounded-full animate-pulse" style="background: var(--color-teal)"></span>
-                            Intervenções de Enfermagem
-                        </div>
+                    <div class="w-full max-w-2xl">
+{{--                        <div class="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-widest mb-6 animate-fade-in"--}}
+{{--                             style="border-color: rgba(0,181,164,0.4); color: var(--color-teal); background: rgba(0,181,164,0.08); font-family: var(--font-display)">--}}
+{{--                            <span class="h-1.5 w-1.5 rounded-full animate-pulse" style="background: var(--color-teal)"></span>--}}
+{{--                            Intervenções de Enfermagem--}}
+{{--                        </div>--}}
 
                         <h1 class="animate-fade-up text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl"
                             style="font-family: var(--font-display); animation-delay: 0.1s; color: var(--color-navy)">
@@ -88,7 +74,7 @@
                             A Nurse Care Intervenções proporciona assistência de enfermagem humanizada, levando conforto e atendimento profissional diretamente à sua residência.
                         </p>
 
-                        <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 animate-fade-up lg:justify-start justify-center"
+                        <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 animate-fade-up justify-center"
                              style="animation-delay: 0.4s">
                             <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener"
                                class="pulse-ring w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
@@ -109,7 +95,7 @@
                         </div>
 
                         {{-- Trust badges --}}
-                        <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-6 animate-fade-up" style="animation-delay: 0.55s">
+                        <div class="mt-10 flex flex-wrap justify-center gap-6 animate-fade-up" style="animation-delay: 0.55s">
                             @foreach(['Atendimento Humanizado', 'Profissionais Qualificados', 'Domiciliar'] as $badge)
                             <div class="hero-badge flex items-center gap-2 text-xs font-medium" style="color: var(--color-gray-600); font-family: var(--font-display)">
                                 <svg class="h-4 w-4 shrink-0" style="color: var(--color-teal)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -121,30 +107,14 @@
                         </div>
                     </div>
 
-                    {{-- Mobile: bare logo, full width --}}
-                    <div class="order-first lg:hidden w-full animate-fade-in" style="animation-delay: 0.3s">
-                        <img src="/logo.jpg" alt="NurseCare" class="w-full object-contain" />
-                    </div>
-
-                    {{-- Desktop: logo in glassmorphism card --}}
-                    <div class="hidden lg:flex flex-col items-center animate-fade-in order-last shrink-0" style="animation-delay: 0.3s">
-                        <div class="relative">
-                            <div class="absolute inset-0 rounded-3xl blur-2xl opacity-30" style="background: var(--color-teal)"></div>
-                            <div class="relative rounded-3xl p-8 shadow-2xl" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(20px)">
-                                <img src="/logo.jpg" alt="NurseCare" class="w-64 object-contain rounded-2xl" />
-                            </div>
-                        </div>
+                    {{-- Logo --}}
+                    <div class="order-first w-full animate-fade-in" style="animation-delay: 0.3s">
+                        <img src="/logo.jpg" alt="NurseCare" class="w-full max-w-sm lg:max-w-md mx-auto object-contain" />
                     </div>
 
                 </div>
             </div>
 
-            {{-- Wave bottom (desktop only) --}}
-            <div class="hidden lg:block absolute bottom-0 left-0 right-0">
-                <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path d="M0 60L1440 60L1440 20C1200 60 960 0 720 20C480 40 240 0 0 20L0 60Z" fill="white"/>
-                </svg>
-            </div>
         </section>
 
         {{-- ═══════════════════════════════════════════════════════════ --}}

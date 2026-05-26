@@ -80,8 +80,3 @@
 .reveal-delay-6 { transition-delay: 0.6s; }
 .reveal-delay-7 { transition-delay: 0.7s; }
 
-@media (min-width: 1024px) {
-    .hero-section h1 { color: white !important; }
-    .hero-section .hero-desc { color: rgba(255, 255, 255, 0.75) !important; }
-    .hero-section .hero-badge { color: rgba(255, 255, 255, 0.6) !important; }
-}
